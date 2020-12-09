@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apSubScene" prefHeight="800.0" prefWidth="1090.0" style="-fx-background-color: #f6f6f6;" xmlns="http://javafx.com/javafx/8.0.271" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wapp.gui.wmGrapeController">
+   <children>
+      <Text layoutX="16.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GRAPES">
+         <font>
+            <Font name="Montserrat Black" size="36.0" />
+         </font>
+      </Text>
+      <Line endX="125.0" endY="-0.48199462890625" layoutX="47.0" layoutY="64.0" startX="-30.0" startY="-0.48199462890625" />
+      <Text layoutX="16.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select or search for a record from the table">
+         <font>
+            <Font name="Montserrat Light" size="16.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tvGrape" layoutX="16.0" layoutY="139.0" prefHeight="600.0" prefWidth="644.0">
+        <columns>
+          <TableColumn fx:id="colName" editable="false" prefWidth="288.0" text="Name" />
+            <TableColumn fx:id="colQuantity" editable="false" prefWidth="75.0" text="Quantity (kg)" />
+            <TableColumn fx:id="colAmmountWine" prefWidth="75.0" text="Yield (L)" />
+          <TableColumn fx:id="colVariety" editable="false" minWidth="0.0" prefWidth="282.0" text="Variety" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <AnchorPane layoutX="679.0" layoutY="134.0" prefHeight="604.0" prefWidth="392.0">
+         <children>
+            <Text layoutX="11.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEARCH GRAPE BY NAME">
+               <font>
+                  <Font name="Montserrat Medium" size="22.0" />
+               </font>
+            </Text>
+            <Line endX="260.3359375" layoutX="43.0" layoutY="28.0" smooth="false" startX="-30.0" />
+            <Text layoutX="12.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter letters to search for a grape by their name">
+               <font>
+                  <Font name="Montserrat Light" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tfSearch" layoutX="12.0" layoutY="79.0" onKeyReleased="#searchGrapeByName" prefHeight="25.0" prefWidth="336.0" promptText="Name" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

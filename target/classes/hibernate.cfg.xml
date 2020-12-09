@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+   	  <property name = "hibernate.dialect">org.hibernate.dialect.Oracle9iDialect</property>
+      <property name = "hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+      <property name = "hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+      <property name = "hibernate.connection.username">JJDN-TEST</property>
+      <property name = "hibernate.connection.password">jjdn-test</property>
+      <property name = "hibernate.show_sql">true</property>
+	  <!-- <property name = "hibernate.hbm2ddl.auto">validate</property> -->
+      
+      <!-- new -->
+      <property name="current_session_context_class">thread</property>
+      <!-- <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property> -->
+      <!-- NO FETCH LAZY ERROR-->
+      <property name="hibernate.enable_lazy_load_no_trans">true</property>
+      
+      
+      <mapping class = "com.wapp.entities.User"/>
+      <mapping class = "com.wapp.entities.UserRole"/>
+      <mapping class = "com.wapp.entities.Grape"/>
+      <mapping class = "com.wapp.entities.GrapeVariety"/>
+      <mapping class = "com.wapp.entities.Bottle"/>
+      <mapping class = "com.wapp.entities.BottleSize"/>
+      <mapping class = "com.wapp.entities.Wine"/>
+      <mapping class = "com.wapp.entities.WineRecipe"/>
+      <mapping class = "com.wapp.entities.Bottling"/>
+   </session-factory>
+</hibernate-configuration>
